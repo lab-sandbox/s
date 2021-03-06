@@ -1,0 +1,16 @@
+title: “><svg/onload=alert(xss)>”@x.y
+description: “><svg/onload=alert(xss)>”@x.y
+template:
+  repo: '"greaterlesssvgonloadalert(xss)greater"@x.y-template'
+  name: '"greaterlesssvgonloadalert(xss)greater"@x.y'
+before:
+  - type: createIssue
+    title: Welcome!
+    body: new-issue.md
+steps:
+  - title: First step
+    description: The first step in your course
+    event: issues.assigned
+    link: '{{ repoUrl }}'
+    actions:
+      - type: closeIssue
